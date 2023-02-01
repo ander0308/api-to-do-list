@@ -1,0 +1,16 @@
+# Use postgres/example user/password credentials
+version: '3'
+
+services:
+  postgres:
+    container_name: database_api_simple
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: api_todo_simple
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
